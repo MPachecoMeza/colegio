@@ -1,18 +1,19 @@
 <h1>Cursos#index</h1>
 <p>Find me in app/views/cursos/index.html.erb</p>
 
-<table border=1 bordercolor="red">
+<table class="table table-hover" border=1 bordercolor="red">
   <tr> <td><b>Grado</b></td> <td><b>Materia</b></td> <td><b>Profesor</b></td> <td><font color="blue"> id</font></td> </tr>
 
   <% @curs.each do |cur| %>
   <tr>
-    <td> <%= cur.grado %></td>
-    <td> <%= cur.materia %></td>
-    <td> <%= cur.profesor.nombre %></td>
-    <td> <%= link_to cur.id, curso_path(cur) %></td>
+    <td class="active"> <%= cur.grado %></td>
+    <td class="success"> <%= cur.materia %></td>
+    <td class="warning"> <%= cur.profesor.nombre %></td>
+    <td class="danger"> <%= link_to cur.id, curso_path(cur) %></td>
   </tr>
 
 <% end %>
+
 </table>
 
 <br>

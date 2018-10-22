@@ -1,18 +1,22 @@
 <h1>Estudiantes#index</h1>
 <p>Find me in app/views/estudiantes/index.html.erb</p>
 
-<table border=1 bordercolor="red">
-  <tr><td><b>ID</b></td> <td><b>Nombre</b></td> <td><b>Apellido</b></td> <td><b>Documento</b></td>
-  <td><b>Grado</b></td> </tr>
+<table class="table table-condensed" border=1 bordercolor="red">
+  <thead>
+    <tr><td><b>ID</b></td> <td><b>Nombre</b></td> <td><b>Apellido</b></td> <td><b>Documento</b></td>
+    <td><b>Grado</b></td> </tr>
+  </thead>
 
   <% @ests.each do |est| %>
-  <tr>
-    <td> <%= est.id %> </td>
-    <td> <%= est.nombre %></td>
-    <td> <%= est.apellido %></td>
-    <td> <%= link_to est.documento, estudiante_path(est) %></td>
-    <td> <%= est.curso.grado %></td>
-  </tr>
+  <tbody bgcolor="#cef6f">
+    <tr>
+      <td> <%= est.id %> </td>
+      <td> <%= est.nombre %></td>
+      <td> <%= est.apellido %></td>
+      <td> <%= link_to est.documento, estudiante_path(est) %></td>
+      <td> <%= est.curso.grado %></td>
+    </tr>
+  </tbody>
 
 <% end %>
 </table>
