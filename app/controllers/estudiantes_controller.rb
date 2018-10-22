@@ -8,9 +8,7 @@ class EstudiantesController < ApplicationController
   end
 
   def create
-  @est = Estudiante.new(nombre: params[:estudiante][:nombre], apellido: params[:estudiante][:apellido],
-    documento: params[:estudiante][:documento], fecha_nac: params[:estudiante][:fecha_nac],
-    curso_id: params[:estudiante][:curso_id])
+  @est = Estudiante.new(estudiante_params)
     if @est.save
       redirect_to estudiante_path(@est)
     else
@@ -28,9 +26,7 @@ class EstudiantesController < ApplicationController
 
   def update
     @est = Estudiante.find(params[:id])
-    if @est.update(nombre: params[:estudiante][:nombre], apellido: params[:estudiante][:apellido],
-      documento: params[:estudiante][:documento], fecha_nac: params[:estudiante][:fecha_nac],
-      curso_id: params[:estudiante][:curso_id])
+    if @est.update(estudiante_params)
       redirect_to estudiante_path(@est)
     else
       render :edit
@@ -41,5 +37,11 @@ class EstudiantesController < ApplicationController
     @est = Estudiante.find(params[:id])
     @est.destroy
     redirect_to estudiantes_path
+  end
+
+  private
+
+  def estudiante_params
+    params.require(:estudiante).permit(:nombre, :apellido, :documento, :fecha_nac, :curso_id)
   end
 end
