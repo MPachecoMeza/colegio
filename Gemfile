@@ -64,4 +64,3 @@ gem 'simple_form'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'jquery-rails'
 gem 'devise'
-**5.prueba**
