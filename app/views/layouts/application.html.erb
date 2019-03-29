@@ -26,21 +26,20 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="#">
+                             <a href="#">
                                 <div>
                                     <strong>John Smith</strong>
                                     <span class="pull-right text-muted">
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
+                                <div>Lorem ipsum                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -51,8 +50,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
+                                <div>Lorem                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -63,8 +61,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
+                                <div>Lorem                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -74,9 +71,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
+                    <!-- /.dropdown-messages
+                </li> -->
+                <!-- /.dropdown
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -153,9 +150,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
+                    <!-- /.dropdown-tasks
+                </li> -->
+                <!-- /.dropdown
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -213,9 +210,10 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
+                    <!-- /.dropdown-alerts
+                </li> -->
+
+                <!-- /.inicio y perfil -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -226,7 +224,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li> <i class="fa fa-sign-out fa-fw"></i> <%= link_to "inicio de sesion", new_usuario_session_path %>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -342,7 +340,12 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <%= value %>
+          </div>
+        <% end %>
         <div id="page-wrapper">
           <%= yield %>
         </div>
